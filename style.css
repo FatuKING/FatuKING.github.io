@@ -1,0 +1,319 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Menu  */
+header{
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  /* position: sticky; */
+  justify-content: space-around;
+  align-items: center;
+  background-color: blueviolet;
+  position: relative;
+}
+
+.title{
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* boton desplegable */
+
+.btnNav{
+  display: none;
+  all: unset;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+}
+
+.btnNav span{
+  display: none;
+  width: 100%;
+  height: 0.125rem;
+  border-radius: 2px;
+  background-color: #242424;
+  box-shadow: 0 .5px 2px 0 hsla(0, 0%, 0%, .2);
+  transition: background-color .4s;
+  position: relative;
+}
+
+.btnNav span{
+  margin-top: .375rem;
+}
+
+.btnNav span:nth-child(1) {
+  animation: ease .8s menu-icon-top-2 forwards;
+}
+
+.btnNav span:nth-child(2) {
+  animation: ease .8s menu-icon-scaled-2 forwards;
+}
+
+.btnNav span:nth-child(3) {
+  animation: ease .8s menu-icon-bottom-2 forwards;
+}
+
+.btnNav:hover span:nth-child(1) {
+  animation: ease .8s menu-icon-top forwards;
+}
+
+.btnNav:hover span:nth-child(2) {
+  animation: ease .8s menu-icon-scaled forwards;
+}
+
+.btnNav:hover span:nth-child(3) {
+  animation: ease .8s menu-icon-bottom forwards;
+  background-color: #242424;
+}
+
+@keyframes menu-icon-top {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  50% {
+    top: .5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    top: .5rem;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes menu-icon-top-2 {
+  0% {
+    top: .5rem;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    top: .5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    top: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes menu-icon-bottom {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+
+  50% {
+    bottom: .5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    bottom: .5rem;
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes menu-icon-bottom-2 {
+  0% {
+    bottom: .5rem;
+    transform: rotate(135deg);
+  }
+
+  50% {
+    bottom: .5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes menu-icon-scaled {
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes menu-icon-scaled-2 {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Items Menu */
+
+.showNav{
+  display: flex;
+  
+}
+
+.showNav li {
+  list-style: none;
+  padding: 0 10px 0 10px;
+}
+
+.showNav li:hover{
+  scale: 1.1;
+}
+
+.showNav li a{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+} 
+
+.showNav li a:hover {
+  border-bottom: 2px solid white;
+}
+
+/* Menu en mobile */
+
+@media screen and (max-width: 480px) {
+  .navbar{
+    justify-content: space-between;
+    padding: 5px 10px 0px 10px;
+  }
+
+  .btnNav{
+    display: block;
+  }
+
+  .btnNav span{
+    display: block;
+  }
+
+  .showNav{
+    display: none;
+  }
+
+  .showNav.active{
+    display: flex;
+    width: 100%;
+    gap: 3px;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: blueviolet;
+    z-index: 1;
+  }
+
+  .showNav li:hover{
+    scale: 1;
+  }
+}
+
+/* Estilos main */
+
+.welcome{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 6rem;
+}
+
+.aboutMe{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 600px;
+  line-height: 1;
+  text-align: left;
+}
+
+.aboutMe h1{
+  font-size: 2.5rem;
+}
+
+.aboutMe h2{
+  font-size: 1.5rem;
+}
+
+.aboutMe p a{
+  text-decoration: none;
+  line-height: 1.3;
+  color: rgb(138, 43, 226);
+}
+
+.aboutMe .download{
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  text-decoration: none;
+  text-align: center;
+  background: rgb(138, 43, 226);
+}
+
+.imgContainer{
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+}
+
+.imgContainer img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* object-fit: cover;
+  object-position: center; */
+}
+
+@media screen and (max-width: 768px){
+  .welcome{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+    padding-top: 6rem;
+  }
+
+  .aboutMe{
+    width: 350px;
+  }
+}
