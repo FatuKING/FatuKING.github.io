@@ -1,6 +1,18 @@
 import './style.css'
 import './navbar.js'
 
+import Typed from 'typed.js';
+
+
+const typed = new Typed('.typed', {
+    strings: ["", "Frontend Developer"],
+    typeSpeed: 100,
+    startDelay: 200,
+    backDelay: 1000,
+    loop: true,
+    loopCount: 2,
+    cursorChar: "_",
+});
 
 // document.querySelector('#app').innerHTML = `
 //   <div>
