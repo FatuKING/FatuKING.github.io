@@ -10,7 +10,7 @@ const typed = new Typed('.typed', {
     startDelay: 200,
     backDelay: 1000,
     loop: true,
-    loopCount: 2,
+    loopCount: 3,
     cursorChar: "_",
 });
 

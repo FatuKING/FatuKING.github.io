@@ -27,11 +27,11 @@ header{
 
 .navbar {
   display: flex;
-  /* position: sticky; */
   justify-content: space-around;
   align-items: center;
   background-color: blueviolet;
-  position: relative;
+  position: fixed;
+  width: 100%;
 }
 
 .title{
@@ -211,7 +211,7 @@ header{
 
 /* Menu en mobile */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .navbar{
     justify-content: space-between;
     padding: 5px 15px 0px 15px;
@@ -254,7 +254,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 4rem;
+  padding: 7rem 4rem 4rem 4rem;
 }
 
 .aboutMe{
@@ -298,6 +298,10 @@ header{
   background: #8A2BE2;
 }
 
+.aboutMe .btnDownload:hover{
+  opacity: 0.9;
+}
+
 .aboutMe .btnDownload .download{
   text-decoration: none;
   color: #fff;
@@ -315,16 +319,91 @@ header{
   border-radius: 50%;
 }
 
+@media screen and (max-width: 1024px){
+  .aboutMe{
+    width: 400px;
+  }
+}
+
 @media screen and (max-width: 768px){
   .welcome{
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     padding-top: 6rem;
+    padding-bottom: 2rem;
   }
 
   .aboutMe{
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .aboutMe{
     width: 350px;
+  }
+}
+
+/* Habilidades  */
+
+.skills{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8rem;
+  height: 400px;
+}
+
+.skills h2{
+  font-size: 2rem;
+}
+
+.container{
+  display: flex;
+  gap: 5rem;
+}
+
+.box{
+  height: 90px;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px){
+  .skills{
+    font-size: 12px;
+  }
+
+  .container{
+    gap: 3rem;
+  }
+
+  .box{
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 524px){
+  .skills{
+    font-size: 10px;
+    padding-top: 0;
+  }
+
+  .container{
+    gap: 1rem;
+  }
+
+  .box{
+    height: 60px;
+    width: 60px;
   }
 }
