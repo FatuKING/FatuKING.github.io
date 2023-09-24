@@ -249,6 +249,11 @@ header{
 }
 
 /* Estilos main */
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .welcome{
   display: flex;
@@ -354,22 +359,21 @@ header{
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  padding-top: 8rem;
   height: 400px;
 }
 
 .skills h2{
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .container{
   display: flex;
-  gap: 5rem;
+  gap: 7rem;
 }
 
 .box{
   height: 90px;
-  width: 90px;
+  width: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -377,9 +381,24 @@ header{
   object-fit: cover;
 }
 
+@media screen and (max-width: 1124px){
+  .skills{
+    font-size: 14px;
+  }
+
+  .container{
+    gap: 4rem;
+  }
+
+  .box{
+    height: 90px;
+    width: 100px;
+  }
+}
+
 @media screen and (max-width: 768px){
   .skills{
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .container{
@@ -399,11 +418,79 @@ header{
   }
 
   .container{
-    gap: 1rem;
+    gap: 1.5rem;
   }
-
+  
   .box{
-    height: 60px;
+    height: 70px;
     width: 60px;
   }
 }
+
+/* Proyectos */
+
+.proyect{
+  display: grid;
+  width: 100%;
+  height: 500px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  place-items: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  gap: 2rem;
+}
+
+.card{
+  height: 330px;
+  width: min(calc(10vw + 15rem), 300px);
+  border-radius: 10px;
+  background: url('/public/proyect1.png') center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContent{
+  height: 100%;
+  background-color: rgb(36, 36, 36, 0.4);
+  padding: 2rem;
+  opacity: 0;
+}
+
+.cardTitle{
+  font-weight: 600;
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+.cardDescription{
+  padding-bottom: 15px;
+}
+
+.card:hover .cardContent{
+  opacity: 1;
+  transition: opacity 1.2s;
+}
+
+.cardContent a{
+  background-color: #8A2BE2;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid #8A2BE2;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  transition: background-color 400ms ease;
+}
+
+.cardContent a:hover{
+  background-color: transparent;
+}
+
+.cardContent a:active{
+  transform: scale(0.9);
+}
+
+
+
