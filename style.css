@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: white;
-  background-color: #242424;
+  background-color: #001d3d;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,7 +29,7 @@ header{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: blueviolet;
+  background-color: #3c096c;
   position: fixed;
   width: 100%;
 }
@@ -57,8 +57,7 @@ header{
   width: 100%;
   height: 0.125rem;
   border-radius: 2px;
-  background-color: #242424;
-  box-shadow: 0 .5px 2px 0 hsla(0, 0%, 0%, .2);
+  background-color: white;
   transition: background-color .4s;
   position: relative;
 }
@@ -89,7 +88,7 @@ header{
 
 .btnNav:hover span:nth-child(3) {
   animation: ease .8s menu-icon-bottom forwards;
-  background-color: #242424;
+  background-color: white;
 }
 
 @keyframes menu-icon-top {
@@ -239,7 +238,7 @@ header{
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: blueviolet;
+    background-color: #3c096c;
     z-index: 1;
   }
 
@@ -249,11 +248,6 @@ header{
 }
 
 /* Estilos main */
-main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 .welcome{
   display: flex;
@@ -300,11 +294,30 @@ main{
   width: 8rem;
   height: 2.6rem;
   border-radius: 1.5rem;
-  background: #8A2BE2;
+  border: 2px solid #8A2BE2;
+  position: relative;
 }
 
-.aboutMe .btnDownload:hover{
-  opacity: 0.9;
+.aboutMe .btnDownload::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0%;
+  height: 0%;
+  background-color: #8A2BE2;
+  transition: clip-path 0.7s ease-in;
+  clip-path: circle(0% at 50% 50%);
+  z-index: -1;
+  border-radius: 1rem;
+}
+
+.aboutMe .btnDownload:hover::before{
+  width: 100%;
+  height: 100%;
+  clip-path: circle(100% at 50% 50%);
+  border: 2px solid #8A2BE2;
 }
 
 .aboutMe .btnDownload .download{
@@ -368,6 +381,8 @@ main{
 
 .container{
   display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
   gap: 7rem;
 }
 
@@ -378,7 +393,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center; 
-  object-fit: cover;
+  flex: 1 0 auto;
 }
 
 @media screen and (max-width: 1124px){
@@ -428,49 +443,74 @@ main{
 }
 
 /* Proyectos */
-
-.proyect{
-  display: grid;
+.separator{
   width: 100%;
-  height: 500px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  place-items: center;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  gap: 2rem;
-}
-
-.card{
-  height: 330px;
-  width: min(calc(10vw + 15rem), 300px);
-  border-radius: 10px;
-  background: url('/public/proyect1.png') center;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.separator h2{
+  font-size: 1.7rem;
+  padding-bottom: 2rem;
+}
+
+
+.proyect{ 
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  place-items: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  gap: 2rem;
+  
+}
+
+.card{
+  height: auto;
+  border-radius: 10px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#212121, #212121) padding-box, linear-gradient(145deg, transparent 35%,#8A2BE2, #4361ee) border-box;
+  border: 2px solid transparent;
+}
+
+
 .cardContent{
   height: 100%;
   background-color: rgb(36, 36, 36, 0.4);
   padding: 2rem;
-  opacity: 0;
+  opacity: 1;
 }
 
 .cardTitle{
+  display: inline-block;
   font-weight: 600;
   font-size: 22px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.cardTitle::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #8A2BE2;
+  transition: width 1s ease;
+}
+
+.cardContent:hover .cardTitle::before{
+  width: 100%;
 }
 
 .cardDescription{
   padding-bottom: 15px;
-}
-
-.card:hover .cardContent{
-  opacity: 1;
-  transition: opacity 1.2s;
 }
 
 .cardContent a{
@@ -486,10 +526,6 @@ main{
 
 .cardContent a:hover{
   background-color: transparent;
-}
-
-.cardContent a:active{
-  transform: scale(0.9);
 }
 
 
