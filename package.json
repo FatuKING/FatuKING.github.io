@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.0.8",
     "typed.js": "^2.0.16"
   }
 }

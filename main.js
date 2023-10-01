@@ -1,6 +1,5 @@
 import './style.css'
-import './navbar.js'
-
+import '@fontsource/roboto';
 import Typed from 'typed.js';
 
 
@@ -10,7 +9,7 @@ const typed = new Typed('.typed', {
     startDelay: 200,
     backDelay: 1000,
     loop: true,
-    loopCount: 3,
+    loopCount: 4,
     cursorChar: "_",
 });
 
