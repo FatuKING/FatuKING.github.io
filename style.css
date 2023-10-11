@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: var(--blanco);
-  background-color: var(--negro);
+  background-color: var(--azul);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,19 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --blanco1: #EEF4ED;
-
-  /* paleta 2 */
-
-  --negro2P2: #0C1821;
-  --azulP2: #1B2A41;
-  --grisP2: #324A5F;
-
-  /* paleta 3 */
+  /* paleta Oscura*/
 
   --negro: #000000;
   --azulOscuro: #000814;
-  --azul: #0A2472;
+  --azul: #000f25;
   --violeta: #8A2BE2;
   --blanco: #CCC9DC;
 }
@@ -47,7 +39,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--azulOscuro);
+  background-color: var(--azul);
   width: 100%;
   text-transform: uppercase;
 }
@@ -70,7 +62,7 @@ header{
 .showNav li a{
   text-decoration: none;
   font-size: 1.1rem;
-  color: var(--blancoP2);
+  color: var(--blanco);
   font-weight: 500;
 } 
 
@@ -93,54 +85,14 @@ header{
   width: 100%;
 }
 
-
-
-/* Menu en mobile */
-
-/* @media screen and (max-width: 768px) {
-  .navbar{
-    justify-content: space-between;
-    padding: 5px 15px 0px 15px;
-  }
-
-  .btnNav{
-    display: block;
-  }
-
-  .btnNav span{
-    display: block;
-  }
-
-  .showNav{
-    display: none;
-  }
-
-  .showNav.active{
-    display: flex;
-    width: 100%;
-    gap: 3px;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #3c096c;
-    z-index: 1;
-  }
-
-  .showNav li:hover{
-    scale: 1;
-  }
-} */
-
 /* Estilos main */
 
 .welcome{
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 7rem 4rem 4rem 4rem;
+  padding: 0rem 4rem 0rem 4rem;
 }
 
 .aboutMe{
@@ -181,7 +133,7 @@ header{
   width: 8rem;
   height: 2.6rem;
   border-radius: 0.8rem;
-  background-color: var(--azulOscuro);
+  background-color: var(--azul);
   border: 2px solid var(--violeta);
   position: relative;
   font-weight: 600;
@@ -214,33 +166,6 @@ header{
   width: 100%;
   height: 100%;
   border-radius: 50%;
-}
-
-@media screen and (max-width: 1024px){
-  .aboutMe{
-    width: 400px;
-  }
-}
-
-@media screen and (max-width: 768px){
-  .welcome{
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 30px;
-    padding-top: 6rem;
-    padding-bottom: 2rem;
-  }
-
-  .aboutMe{
-    width: 450px;
-  }
-}
-
-@media screen and (max-width: 480px){
-  .aboutMe{
-    width: 350px;
-  }
 }
 
 /* Habilidades  */
@@ -300,100 +225,56 @@ header{
   }
 }
 
-/* @media screen and (max-width: 1124px){
-  .skills{
-    font-size: 14px;
-  }
-  
-  .container{
-    gap: 4rem;
-  }
-
-  .box{
-    height: 90px;
-    width: 100px;
-  }
-}
-
-@media screen and (max-width: 768px){
-  .skills{
-    font-size: 14px;
-  }
-
-  .container{
-    gap: 3rem;
-  }
-
-  .box{
-    height: 70px;
-    width: 70px;
-  }
-}
-
-@media screen and (max-width: 524px){
-  .skills{
-    font-size: 10px;
-    padding-top: 0;
-  }
-
-  .container{
-    gap: 1.5rem;
-  }
-  
-  .box{
-    height: 70px;
-    width: 60px;
-  }
-} */
-
 /* Proyectos */
 .separator{
   width: 100%;
   height: 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
   margin-top: 4rem;
+  text-align: center;
 }
 
 .separator h2{
   margin: auto;
   font-size: 1.7rem;
+}
+
+.separator p{
+  width: 50%;
   padding-bottom: 2rem;
 }
 
-
 .proyect{ 
   display: grid;
-  width: 100%;
+  width: 75%;
+  margin: auto;
   height: auto;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   place-items: center;
-  padding-left: 3rem;
-  padding-right: 3rem;
   gap: 2rem;
 }
 
 .card{
   height: auto;
-  min-width: 280px;
+  min-width: 200px;
   border-radius: 10px;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#212121, #212121) padding-box, linear-gradient(145deg, transparent 35%,#8A2BE2, #4361ee) border-box;
+  background: linear-gradient(var(--negro), var(--negro)) padding-box, linear-gradient(145deg, transparent 35%,#8A2BE2, #4361ee) border-box;
   border: 2px solid transparent;
 }
 
-
 .cardContent{
   height: 100%;
-  background-color: rgb(36, 36, 36, 0.4);
   padding: 2rem;
   opacity: 1;
-  background-color: #000814;
+  background-color: var(--negro);
 }
 
 .cardTitle{
@@ -442,13 +323,13 @@ header{
 
 .contact{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 25rem;
   width: 100%;
   height: 400px;
   margin: auto;
   position: relative;
+  margin-top: 4rem;
 }
 
 .tarjeta{
@@ -456,6 +337,7 @@ header{
   flex-direction: column;
   gap: 1rem;
   height: 250px;
+  width: 300px;
 }
 
 .tarjeta h2{
@@ -482,18 +364,21 @@ header{
   scale: 1.1;
 }
 
-
 /* Formulario */
 
-
 form{
+  width: 400px;
+  background: linear-gradient(var(--negro), var(--negro)) padding-box,
+              linear-gradient(145deg, transparent 35%,#8A2BE2, #4361ee) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
   display: flex;
-  background-color: #000814;
-  padding: 20px;
-  border-radius: 20px;
   flex-direction: column;
-  gap: 1rem;
-  position: relative;
+  gap: 20px;
+  border-radius: 16px;
 }
 
 form input[type="text"],
@@ -501,28 +386,36 @@ form input[type="tel"],
 form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--violeta);
     background-color: transparent;
     color: #ffffff;
     border-radius: 5px;
+    border: 1px solid #414141;
 }
 
 form input[type="submit"] {
   width: 25%;
   position: right;
-  background-color: transparent;
+  background-color: var(--violeta);
   text-decoration: none;
   padding: 5px 10px 5px 10px;
-  border: 2px solid var(--violeta);
+  border: 1px solid var(--violeta);
   border-radius: 5px;
   color: white;
-  font-weight: 500;
   transition: background-color 400ms ease;
+}
+
+form input[type="submit"]:hover{
+  background-color: transparent;
+}
+
+form input[type="submit"]:focus{
+  scale: 0.9;
 }
 
 form input:focus,
 form textarea:focus{
-  outline: solid var(--violeta);
+  border: 1px solid var(--violeta);
+  outline: none;
 }
 
 .contact .btnHome{
@@ -534,5 +427,57 @@ form textarea:focus{
   color: #ffffff;
 }      
       
+/* Media Queries */
 
-          
+@media screen and (max-width: 1024px){
+  .welcome{
+    height: auto;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+
+  .aboutMe{
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .showNav li a{
+    font-size: 1rem;
+  }
+
+  .welcome{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+
+  .aboutMe{
+    width: 450px;
+  }
+
+  .contact{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    height: 600px;
+    padding-bottom: 2rem;
+  }
+
+  .contact .btnHome{
+    display: none;
+  }
+
+  .separator p{
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .aboutMe{
+    width: 350px;
+  }
+}
