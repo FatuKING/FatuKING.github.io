@@ -125,37 +125,6 @@ header{
   color: var(--violeta);
 }
 
-.aboutMe .btnDownload{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  width: 8rem;
-  height: 2.6rem;
-  border-radius: 0.8rem;
-  background-color: var(--azul);
-  border: 2px solid var(--violeta);
-  position: relative;
-  font-weight: 600;
-}
-
-.aboutMe .btnDownload:hover{
-  transition: background-color 600ms ease;
-}
-
-.aboutMe .btnDownload:active{
-  scale: 0.9;
-}
-
-.aboutMe .btnDownload .download{
-  text-decoration: none;
-  color: white;
-}
-
-.aboutMe .btnDownload svg{
-  color: white;
-}
-
 .imgContainer{
   height: 300px;
   width: 300px;
@@ -169,60 +138,18 @@ header{
 }
 
 /* Habilidades  */
-
-.skills{
-  width: 75%;
-  height: auto;
-  margin: auto;
-  overflow: hidden;
+.technologies{
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(5, 90px);
+  justify-content: center;
 }
 
-.skills .slider{
-  display: flex;
-  gap: 2rem;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  animation: scroll 60s linear infinite;
-  -webkit-animation: scroll 60s linear infinite;
-  width: calc(200px * 10);
-}
-
-.skills .slider:nth-child(2){
-  display: flex;
-  gap: 2rem;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  animation: scroll2 60s linear infinite;
-  -webkit-animation: scroll2 60s linear infinite;
-  width: calc(200px * 10);
-}
-
-.skills .slider:nth-child(2) .box{
-  padding-left: 80px;
-}
-
-.skills .slider .box{
-  width: 200px;
-}
-
-@keyframes scroll {
-  0%{
-    transform: translateX(0);
-  }
-
-  100%{
-    transform: translateX(calc(-200px * 5));
-  }
-}
-
-@keyframes scroll2 {
-  0%{
-    transform: translateX(calc(-200px * 5));
-  }
-
-  100%{
-    transform: translateX(0);
-  }
+.box{
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  box-shadow: 3px 2px black;
 }
 
 /* Proyectos */
@@ -293,18 +220,20 @@ header{
   width: 0;
   height: 2px;
   background-color: #8A2BE2;
-  transition: width 1s ease;
+  transition: width 500ms ease-in;
 }
 
 .cardContent:hover .cardTitle::before{
   width: 100%;
+  transition: width 1.5s ease-in;
 }
 
 .cardDescription{
   padding-bottom: 15px;
 }
 
-.cardContent a{
+.btn {
+  width: 130px;
   background-color: #8A2BE2;
   text-decoration: none;
   padding: 5px 10px 5px 10px;
@@ -315,7 +244,7 @@ header{
   transition: background-color 400ms ease;
 }
 
-.cardContent a:hover{
+.btn:hover{
   background-color: transparent;
 }
 
@@ -477,7 +406,28 @@ form textarea:focus{
 }
 
 @media screen and (max-width: 480px){
+  .welcome{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  .showNav li a{
+    font-size: 0.9rem;
+  }
+
   .aboutMe{
     width: 350px;
+  }
+
+  .skills{
+    padding-bottom: 4rem;
+  }
+
+  .proyect{
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  }
+
+  form{
+    width: 320px;
   }
 }
