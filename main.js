@@ -1,7 +1,7 @@
 import './style.css'
 import '@fontsource/roboto';
+import './navbar.js'
 import Typed from 'typed.js';
-
 
 const typed = new Typed('.typed', {
     strings: ["", "Frontend Developer"],

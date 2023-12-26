@@ -1,9 +1,13 @@
-// Boton desplegable 
-const btnNav = document.getElementById('btnNav');
-const showNav = document.getElementById('showNav');
+let prevScrollPos = window.pageYOffset;
 
-btnNav.addEventListener('click', () => {
-    showNav.classList.toggle('active');
-});
+window.onscroll = function() {
+    const currentScrollPos = window.pageYOffset;
 
+    if (prevScrollPos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+    } else {
+        document.getElementById("navbar").style.top = "-70px"; // Ajusta el valor para ocultar completamente el header
+    }
 
+    prevScrollPos = currentScrollPos;
+};
